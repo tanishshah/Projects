@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css">
+    <link rel="stylesheet"  href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet"> 
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+    <meta charset = "UTF-8" />
+</head>
+<body>
+    
+    <div>
+        <ul class="nav">
+            <li class="navi"><a class="links" href="index.html">Home</a></li>
+            <li class="navi"><a class="links" href="instructions.html">Instructions</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <h1 id="title">Welcome To Markit!</h1>
+    </div>
+
+    <div id="inst">
+        <div>
+            <p class="heading">Instructions</p>
+        </div>
+        <div class="bhead">
+            <p class="sheading">Plotting Points</p>
+        </div>
+        <div class="shead">
+            <p class="info">To plot a point, simply enter; a latitude, longitude, colour, and the size you would like the marker to be.
+                Then press the ADD button.You can continue this process as many times as you would like.
+                Once you are done, press the plot button to have your markers appear on the map. 
+                To view the latitude and longitude of the marker, simply click on the marker.
+            </p>
+        </div>
+        <div class="bhead">
+            <p class="sheading">Uploading A File</p>
+        </div>
+        <div class="shead">
+            <p class="info">If you would like to plot multiple points quickly, you can also upload a file.
+                 The file should be organized in the same way as plotting an individual point; latitude, longitude, colour, 
+                 and the size of the marker. Each of these elements needs to be separated by a comma for this to work.
+                 It is important to note that you can still add points using the ADD button after you have uploaded a file. 
+                 Below is an example of how the file could look. I prefer to keep each point on its own line, however it 
+                 is not necessary.
+            </p>
+        </div>
+        <div id="shead">
+            <img src="images/example.JPG">
+        </div>
+        <div class="bhead">
+            <p class="sheading">Warning</p>
+        </div>
+        <div class="shead">
+            <p class="info">Once you press PLOT, you will no longer be able to add markers. Before pressing plot ensure
+                that you have correctly entered in the information that you wish to have plotted.
+            </p>
+        </div>
+    </div>
+    
+</body>
+</html>
+

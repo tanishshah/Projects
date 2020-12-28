@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css">
+    <link rel="stylesheet"  href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet"> 
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+    <meta charset = "UTF-8" />
+</head>
+<body>
+
+    <div>
+        <ul class="nav">
+            <li class="navi"><a class="links" href="index.html">Home</a></li>
+            <li class="navi"><a class="links" href="instructions.html">Instructions</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <h1 id="title">Welcome To Markit!</h1>
+    </div>
+
+    <div class="buttons">
+        <input type="button" onclick="map();" id="button" value="Plot"/>
+    </div>
+
+    <div>
+        <input type="text" value="Latitude" id="lat"/>
+        <input type ="text" value="Longitude" id="lon"/>
+        <input type ="text" value="colour" id="col"/>
+        <input type ="text" value="size" id="size"/>
+        <input type="button" onclick="collector();" value="Add" class = "button2"/>
+    </div>
+
+    <div id="fin">
+		<h1 class="info">Upload a file to be plotted!</h1>
+		<div>
+			<input type="file" id="fileInput">
+		</div>
+	</div>
+
+    <div class="map" >
+        <div id="mapid">           
+        </div>
+    </div>
+    
+</body>
+</html>
+
