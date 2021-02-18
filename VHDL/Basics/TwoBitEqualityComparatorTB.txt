@@ -1,0 +1,88 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+ 
+entity testbench is
+-- empty
+end testbench; 
+
+architecture tb of testbench is
+
+component comparator is
+port(
+      a0 : in std_logic;
+	  a1 : in std_logic;
+      b0 : in std_logic;
+      b1 : in  std_logic;
+      c : out std_logic
+);
+end component;
+
+signal A0, A1, B0, B1, C: std_logic;
+
+begin
+
+  DUT: comparator port map(A0, A1, B0, B1, C);
+
+  process
+  begin    
+    
+    --All the true cases
+    A0 <= '0';
+   	A1 <= '0';
+    B0 <='0';
+    B1 <='0';
+    wait for 1 ns;
+    assert(C='1') severity error;
+    
+    A0 <= '0';
+   	A1 <= '1';
+    B0 <='0';
+    B1 <='1';
+    wait for 1 ns;
+    assert(C='1') severity error;
+    
+    A0 <= '1';
+   	A1 <= '0';
+    B0 <='1';
+    B1 <='0';
+    wait for 1 ns;
+    assert(C='1') severity error;
+    
+    A0 <= '1';
+   	A1 <= '1';
+    B0 <='1';
+    B1 <='1';
+    wait for 1 ns;
+    assert(C='1') severity error;
+    
+    --Some of the false cases
+    
+    A0 <= '0';
+   	A1 <= '0';
+    B0 <='0';
+    B1 <='1';
+    wait for 1 ns;
+    assert(C='0') severity error;
+    
+    A0 <= '1';
+   	A1 <= '0';
+    B0 <='0';
+    B1 <='1';
+    wait for 1 ns;
+    assert(C='0') severity error;
+    
+    A0 <= '1';
+   	A1 <= '1';
+    B0 <='0';
+    B1 <='0';
+    wait for 1 ns;
+    assert(C='0') severity error;
+    
+    A0 <= '0';
+    A1 <= '0';
+    B0 <= '0';
+    B1 <= '0';
+    
+    wait;
+  end process;
+end tb;

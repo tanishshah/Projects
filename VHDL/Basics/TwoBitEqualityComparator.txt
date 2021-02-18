@@ -1,0 +1,17 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity comparator is
+	port( 
+      a0 : in std_logic;
+	  a1 : in std_logic;
+      b0 : in std_logic;
+      b1 : in  std_logic;
+      c : out std_logic
+  );
+  end comparator;
+
+architecture Behavioral of comparator is
+	begin
+      c<= (a0 xnor b0) and (a1 xnor b1); 
+	end Behavioral;
