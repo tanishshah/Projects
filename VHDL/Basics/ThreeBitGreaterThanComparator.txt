@@ -1,0 +1,22 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity gtComparator is
+	port( 
+      a0 : in std_logic;
+      a1 : in std_logic;
+      a2: in std_logic;
+      b0 : in std_logic;
+      b1 : in  std_logic;
+      b2 : in std_logic;
+      z : out std_logic
+  );
+  end gtComparator;
+
+architecture Behavioral of gtComparator is
+    signal c2, c1 : std_logic;
+	begin
+    	c2<= a2 xnor b2;
+        c1 <= a1 xnor b1;
+        z <= (a2 and (not b2)) or (a1 and (not b1) and c2) or (a0 and (not b0) and c1 and c2);
+	end Behavioral;
