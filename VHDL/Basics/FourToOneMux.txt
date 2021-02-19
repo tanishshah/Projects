@@ -1,0 +1,20 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity fourToOneMux is
+	port( 
+      c0 : in std_logic;
+      c1 : in std_logic;
+      c2: in std_logic;
+      c3 : in std_logic;
+      s0 : in  std_logic;
+      s1 : in std_logic;
+      z : out std_logic
+  );
+  end fourToOneMux;
+
+architecture Behavioral of fourToOneMux is
+	begin
+    	z <= (c0 and (not s0) and (not s1)) or (c1 and s0 and (not s1)) or (c2 and (not s0) and s1) or (c3 and s0 and s1);
+	end Behavioral;
+
