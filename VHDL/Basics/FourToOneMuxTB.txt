@@ -38,53 +38,25 @@ begin
     wait for 1 ns;
     assert(y='1') severity error;
     
-    	
-    a0 <= '0';
-    a1 <= '1';
-    a2 <= '1';
-    a3 <='1';
-    b0 <='0';
-    b1 <= '0';
-    wait for 1 ns;
-    assert(y='0') severity error;
-    
     --select a1
     a0 <= '0';
     a1 <= '1';
     a2 <= '0';
     a3 <='0';
-    b0 <='0';
-    b1 <= '1';
-    wait for 1 ns;
-    assert(y='1') severity error;
-    
-    a0 <= '1';
-    a1 <= '0';
-    a2 <= '1';
-    a3 <='1';
     b0 <='1';
     b1 <= '0';
     wait for 1 ns;
-    assert(y='0') severity error;
+    assert(y='1') severity error;
     
     --select a2
     a0 <= '0';
     a1 <= '0';
     a2 <= '1';
     a3 <='0';
-    b0 <='1';
-    b1 <= '0';
-    wait for 1 ns;
-    assert(y='1') severity error;
-    
-    a0 <= '1';
-    a1 <= '1';
-    a2 <= '0';
-    a3 <='1';
     b0 <='0';
     b1 <= '1';
     wait for 1 ns;
-    assert(y='0') severity error;
+    assert(y='1') severity error;
     
     --select a3
     a0 <= '0';
@@ -94,18 +66,8 @@ begin
     b0 <='1';
     b1 <= '1';
     wait for 1 ns;
-    assert(y='1') severity error;
+    assert(y='1') severity error; 
     
-    a0 <= '1';
-    a1 <= '1';
-    a2 <= '1';
-    a3 <='0';
-    b0 <='1';
-    b1 <= '1';
-    wait for 1 ns;
-    assert(y='0') severity error;
-  
-  
     a0 <= '0';
     a1 <= '0';
     a2 <= '0';
