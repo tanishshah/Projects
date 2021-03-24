@@ -67,6 +67,7 @@ class List extends Component {
         const {bugs} = this.state;
         return (
             <div class="main">
+                <h1 className="titleText">View, Update, and Delete Bugs</h1>
                 <reactBootStrap.ListGroup>
                     {bugs.map(({issue,priority,description,date,_id})=>(
                         <reactBootStrap.ListGroupItem key={_id.toString()} style={{backgroundColor:"#282c34", color:'whitesmoke'}}>

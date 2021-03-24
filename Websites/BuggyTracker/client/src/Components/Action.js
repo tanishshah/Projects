@@ -48,8 +48,7 @@ class Action extends Component {
     const {issue, priority, description} = this.state;
     return (
       <div className="main">
-          <h1 className="titleText">Welcome to Buggy! A quick and simple way to track bugs!</h1>
-          <p className="regText">To start make a start working on your bugs navigate to the actions button at the top of the page.</p>
+          <h1 className="titleText">Make a bug</h1>
           <div className="form">
             <reactBootStrap.Form>
               <reactBootStrap.Form.Group controlId="exampleForm.ControlInput1">
