@@ -3,8 +3,9 @@ import React from 'react';
 import './App.css';
 import Navi from './components/Navi.js';
 import Mapi from './components/Mapi.js';
-import Formi from './components/Formi.js';
 import Charti from './components/Charti.js';
+import MainForm from './components/MainForm.js';
+
 //main function
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
     <Navi/>
     <Mapi/>
     <Charti/>
-    <Formi/>
+    <MainForm/>
     </div>
   );
 }

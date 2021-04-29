@@ -26,5 +26,18 @@ router.post('/', (req,res) =>{
         .catch(err => res.status(404).json({sucess: false}));
 });
 
+router.delete('/:id', (req,res) =>{
+    Person.findById(req.params.id)
+        .then(person =>person.remove().then(()=>res.json({success: true})))
+        .catch(err => res.status(404).json({sucess: false}));
+})
+
+router.put('/:id', (req,res) =>{
+    Person.findById(req.params.id)
+        .then(person =>person.update(req.body).then(()=>res.json({success: true})))
+        .catch(err => res.status(404).json({sucess: false}));
+});
+
+
 //Exports
 module.exports = router;

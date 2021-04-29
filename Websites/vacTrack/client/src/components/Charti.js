@@ -1,3 +1,5 @@
+//code for the component that displays the charts
+//imports
 import React,{Component} from "react";
 import "./../App.css";
 import {Doughnut,Bar} from "react-chartjs-2";

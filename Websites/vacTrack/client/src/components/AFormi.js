@@ -1,12 +1,13 @@
+//Code for the add form 
 //imports
 import React,{Component} from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import "./../App.css";
-import axios from 'axios'
+import axios from 'axios';
 
 //class for the form
-class Formi extends Component{
+class AFormi extends Component{
     constructor(props) {
         super(props);
         this.state = {
@@ -14,7 +15,9 @@ class Formi extends Component{
           mail:"",
           vaccinated:"",
           age:"",
-          income:""
+          income:"",
+          longitude:"",
+          lattitude:""
         }
       };
     
@@ -48,7 +51,7 @@ class Formi extends Component{
     
         axios.post('http://localhost:5000/people',person)
             .then(res => {
-            window.alert('Your data has been submitted')
+            window.alert('Your data has been submitted');
             this.setState({
                 name: '',
                 mail: '',
@@ -58,18 +61,19 @@ class Formi extends Component{
                 lattitude:'',
                 vaccinated:''
             })
+            window.location.reload();
         })
       };
 
 
 
-    //completing the update, make, and delete form
+    //completing the add form
     render (){
         const {lattitude, longitude, name,mail,age,income,vaccinated} = this.state;
         return(
             <div className="mForm">
                 <Form>
-                <Form.Label>Required</Form.Label>
+                <Form.Label style={{fontWeight:'bold', fontStyle:'italic', color:'red'}}>Required</Form.Label>
                     <Form.Row className="sForm">
                         <Form.Group controlId="exampleForm.ControlTextarea1">
                             <Form.Label>Name</Form.Label>
@@ -88,17 +92,14 @@ class Formi extends Component{
                             <Form.Control as="textarea" rows={1} value={longitude} onChange={this.setLongitude}/>
                         </Form.Group>
                     </Form.Row>
-                    <Form.Group controlId="exampleForm.ControlSelect1">
+                    <Form.Group controlId="exampleForm.ControlTextArea7">
                         <Form.Label className="lForm">Vaccinated</Form.Label>
-                        <Form.Control as="select" value={vaccinated} onChange={this.setVaccinated}>
-                            <option>Select an option</option>
-                            <option>Yes</option>
-                            <option>No</option>
-                            <option>In Line</option>
-                            <option>Not Sure</option>
-                        </Form.Control>
+                        <Form.Label className="lForm" style={{fontWeight:'bold', fontStyle:'italic'}}>
+                        To have your responses used in the data you must enter one of the keywords. (Yes, No, In Line, or Not Sure)
+                        </Form.Label>
+                        <Form.Control as="textarea" rows={1} value={vaccinated} onChange={this.setVaccinated}/>
                     </Form.Group>
-                    <Form.Label>Optional</Form.Label>
+                    <Form.Label style={{fontWeight:'bold', fontStyle:'italic'}}>Optional</Form.Label>
                     <div className="miForm">
                     <Form.Row>
                         <Form.Group controlId="exampleForm.ControlTextarea5">
@@ -122,4 +123,4 @@ class Formi extends Component{
     };
 }
 
-export default Formi;
+export default AFormi;

@@ -1,19 +1,21 @@
+//code for the navbar
 //imports
 import React from 'react';
-import * as reactBootStrap from 'react-bootstrap';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 
 //navbar
 function Navi() {
   return (
   <div>
-    <reactBootStrap.Navbar collapseOnSelect expand="lg" style={{backgroundColor: "#21262f"}} variant='dark'>
-      <reactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <reactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
-        <reactBootStrap.Nav className="ml-auto">
-          <reactBootStrap.Nav.Link href=""style={{fontSize: "18px", color:"white"}}>VacTrack</reactBootStrap.Nav.Link>
-        </reactBootStrap.Nav>
-      </reactBootStrap.Navbar.Collapse>
-    </reactBootStrap.Navbar>
+    <Navbar collapseOnSelect expand="lg" style={{backgroundColor: "#21262f"}} variant='dark'>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="ml-auto">
+          <Nav.Link href=""style={{fontSize: "18px", color:"white"}}>VacTrack</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   </div>
   );
 }

@@ -1,3 +1,5 @@
+//code for displaying the map component
+//imports
 import React,{Component} from "react";
 import {MapContainer,Marker,TileLayer,Popup} from "react-leaflet";
 import "./../App.css";
