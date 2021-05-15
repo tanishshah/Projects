@@ -52,7 +52,7 @@ class DFormi extends Component{
         }
         if (window.confirm("Are you sure you want do delete this item?")) {
             axios.delete(`http://localhost:5000/people/${dId}`);
-            window.location.reload();
+            window.alert("Deleted");
         }
         else{
             window.alert("The entry was not deleted");

@@ -16,8 +16,6 @@ class PFormi extends Component{
           eVaccinated:"",
           eAge:"",
           eIncome:"",
-          eLattitude:"",
-          eLongitude:"",
           dataPoints:[]
         }
     };
@@ -47,12 +45,6 @@ class PFormi extends Component{
     setVaccinated=(event)=>{
         this.setState({eVaccinated: event.target.value});
     };
-    setLattitude=(event)=>{
-        this.setState({eLattitude: event.target.value});
-    };
-    setLongitude=(event)=>{
-        this.setState({eLongitude: event.target.value});
-    };
     setAge=(event)=>{
         this.setState({eAge: event.target.value});
     };
@@ -61,24 +53,26 @@ class PFormi extends Component{
     };
 
     //make the update based on the id
-    updatePerson=(names,mails,ids,eName,eMail,eLattitude,eLongitude,eAge,eIncome,eVaccinated) => {
+    updatePerson=(names,mails,ids,eName,eMail,eAge,eIncome,eVaccinated) => {
         let dId = 0;
         for(let i = 0;i<names.length;i++)
         {
             if(eName===names[i] && eMail===mails[i])
                 dId = ids[i];
         }
-        if(eLattitude && eLongitude)
-        {
-            axios.put(`http://localhost:5000/people/${dId}`,{vaccinated:eVaccinated,
-            lattitude: eLattitude, longitude: eLongitude, age: eAge, income:eIncome});
-            window.alert('Your data has been submitted');
-            window.location.reload();
-        }
+        if(eAge!=="")
+            axios.put(`http://localhost:5000/people/${dId}`,{age: eAge});
         else
-            window.alert('Please enter lattitude and longitude'); 
-            //it wont update if its non number so thats good
-
+            console.log("no change")
+        if(eIncome!=="")
+            axios.put(`http://localhost:5000/people/${dId}`,{income: eIncome});  
+        else
+            console.log("no change")
+        if(eVaccinated!=="")
+            axios.put(`http://localhost:5000/people/${dId}`,{vaccinated: eVaccinated}); 
+        else
+            console.log("no change") 
+        window.alert('Your data has been submitted');
     };
 
 
@@ -113,16 +107,8 @@ class PFormi extends Component{
                             <Form.Label>Email</Form.Label>
                             <Form.Control as="textarea" rows={1} value={this.state.eMail} onChange={this.setMail} />
                         </Form.Group>
-                        <Form.Group controlId="exampleForm.ControlTextarea3">
-                            <Form.Label>Lattitude</Form.Label>
-                            <Form.Control as="textarea" rows={1} value={this.state.eLattitude} onChange={this.setLattitude}/>
-                        </Form.Group>
-                        <Form.Group controlId="exampleForm.ControlTextarea4">
-                            <Form.Label>Longitude</Form.Label>
-                            <Form.Control as="textarea" rows={1} value={this.state.eLongitude} onChange={this.setLongitude}/>
-                        </Form.Group>
                     </Form.Row>
-                    <Form.Group controlId="exampleForm.ControlTextarea7">
+                    <Form.Group controlId="exampleForm.ControlTextarea5">
                         <Form.Label className="lForm">Vaccinated</Form.Label>
                         <Form.Label className="lForm" style={{fontWeight:'bold', fontStyle:'italic'}}>
                         To have your responses used in the data you must enter one of the keywords. (Yes, No, In Line, or Not Sure)
@@ -131,11 +117,11 @@ class PFormi extends Component{
                     </Form.Group>
                     <div className="miForm">
                     <Form.Row>
-                        <Form.Group controlId="exampleForm.ControlTextarea5">
+                        <Form.Group controlId="exampleForm.ControlTextarea6">
                             <Form.Label>Age</Form.Label>
                             <Form.Control as="textarea" rows={1} value={this.state.age} onChange={this.setAge}/>
                         </Form.Group>
-                        <Form.Group controlId="exampleForm.ControlTextarea6">
+                        <Form.Group controlId="exampleForm.ControlTextarea7">
                             <Form.Label>Income</Form.Label>
                             <Form.Control as="textarea" value={this.state.income} rows={1} onChange={this.setIncome}/>
                         </Form.Group>
@@ -144,8 +130,7 @@ class PFormi extends Component{
                     <Form.Row className="lForm">
                         <Button variant="primary" onClick={()=>this.updatePerson(
                             names,mails,ids,this.state.eName,
-                            this.state.eMail,this.state.eLattitude,
-                            this.state.eLongitude,this.state.eAge,this.state.eIncome,
+                            this.state.eMail,this.state.eAge,this.state.eIncome,
                             this.state.eVaccinated)}>
                         Submit
                         </Button>
