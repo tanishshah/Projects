@@ -1,0 +1,35 @@
+body{
+    background-image:url('bg.jpg');
+    height: 100%;
+    width: 100%;
+}
+
+.title{
+    font-family: 'Raleway', sans-serif;
+    font-size: 80px;
+    color: white;
+    margin-top: 15vh;
+    margin-bottom: 15vh;
+    justify-content: center;
+    display: flex;
+}
+
+.center{
+    justify-content: center;
+    display: flex;
+}
+
+.buttons{
+    margin-top: 7vh;
+    font-size: 30px;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    background-color: Transparent;
+    border: 1px solid white;
+    border-radius: 8px;
+    transition: transform .2s;
+    width: 35%;
+}
+.buttons:hover{
+    transform: scale(1.1);
+}
