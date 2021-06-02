@@ -1,5 +1,5 @@
 BugLogo 
 Attribution: Font Awesome Free 5.2.0 by @fontawesome - https://fontawesome.com
 https://commons.wikimedia.org/wiki/File:Font_Awesome_5_solid_bug.svg
-
+https://creativecommons.org/licenses/by/4.0/deed.en
 -Modified the colour to match the website
