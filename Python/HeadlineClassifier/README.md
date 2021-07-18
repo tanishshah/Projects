@@ -9,3 +9,12 @@ https://www.linkedin.com/learning/nlp-with-python-for-machine-learning-essential
 https://politics.theonion.com/
 https://www.pbs.org/newshour/politics
 
+#NLTK
+Bird, Steven, Edward Loper and Ewan Klein (2009), Natural Language Processing with Python. O’Reilly Media Inc.
+https://www.nltk.org/
+
+#Sci-kit learn
+https://scikit-learn.org
+Scikit-learn: Machine Learning in Python, Pedregosa et al., JMLR 12, pp. 2825-2830, 2011.
+
+
